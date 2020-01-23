@@ -31,13 +31,14 @@ int main() {
         exit(1);
     }
 
+    const char k_quit_str[] = "quit";
     while(true) {
         char buf[4096];
         char *c;
         printf(">>> ");
         fgets(buf, sizeof(buf), stdin);
 
-        if (strncmp(buf, "quit", sizeof(buf)) == 0) {
+        if (strncmp(buf, k_quit_str, strlen(buf)-1) == 0) {
             break;
         }
 
